@@ -1,0 +1,383 @@
+@import url("reset.css");
+/* font-family: 'Handlee', cursive;
+font-family: 'Montserrat', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:wght@400;700&display=swap');
+/* tipo de letra */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
+/* esto lo hemos traido de aqui: https://cdnjs.com/libraries/font-awesome */
+
+* {
+    box-sizing: border-box;
+    /* para que el borde y el padding crezcan para adentro */
+}
+
+/* variables :)  */
+
+:root {
+    --color-principal: #fa573a;
+    --color-secundario: #21242e;
+    --color-terciario: grey;
+    --fuentePrincipal: 'Montserrat', sans-serif;
+    --fuenteSecundaria: 'Handlee', cursive;
+    --anchoMaximo: 1100px;
+    /* no poner mediaqueries */
+}
+
+body {
+    font-family: var(--fuentePrincipal);
+    font-size: 1em;
+    /* el usuario define el tamaño */
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* siempre que sea responsive poner esto de la img*/
+
+.container {
+    max-width: var(--anchoMaximo);
+    margin: 0 auto;
+}
+
+.row {
+    /* aplicar a los elementos flotantes  */
+    display: flex;
+}
+
+.active {
+    color: var(--color-principal);
+}
+
+/* ESTO ES PARA EL MOVIL */
+
+/* HEADER */
+
+/* header de arriba */
+
+header .nav_top {
+    background-color: var(--color-secundario);
+    padding: 20px 10px;
+}
+
+header .nav_top a {
+    color: white;
+    font-size: 120%;
+    text-decoration: none;
+}
+
+header .nav_top a span {
+    display: none;
+    /* Esta oculto porque el tamaño era movil */
+}
+
+header .nav_top a i {
+    color: var(--color-principal);
+}
+
+header .nav_top .row {
+    justify-content: space-between;
+}
+
+/* header de abajo con menu de navegacion */
+
+header nav {
+    padding: 20px 10px;
+}
+
+/* estamos haciendo el boton tres lineas */
+
+header .hamburguesa {
+    width: 50px;
+    cursor: pointer;
+    /* esto es para que salga una mano */
+}
+
+header .hamburguesa div {
+    border-top: 2px solid var(--color-terciario);
+    margin: 10px;
+}
+
+header nav .row {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+header nav ul {
+    width: 100%;
+}
+
+header nav .logo {
+    max-width: 110px;
+}
+
+header nav ul li a {
+    display: block;
+    border-bottom: 1px solid var(--color-terciario);
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    color: var(--color-terciario);
+}
+
+header nav ul li a:hover {
+    color: var(--color-principal);
+}
+
+/* esto es para que se quede marcado el boton */
+
+header nav ul li .activo {
+    color: var(--color-principal)
+}
+
+@media(min-width: 48em) {
+    header .nav_top a span {
+        display: inline;
+    }
+}
+
+@media(min-width: 62.750em) {
+    header .hamburguesa {
+        display: none;
+    }
+    header nav ul {
+        width: auto;
+    }
+    header nav ul li {
+        display: inline-block;
+    }
+    header nav ul li a {
+        padding: 5px 20px;
+        border-bottom: 0px;
+        /* none */
+    }
+}
+
+/* FIN HEADER  */
+
+/* MAIN DEL BLOG  */
+
+main section {
+    padding: 2.125em 0.825em;
+    background-color: var(--color-secundario);
+}
+
+/* titulos  */
+
+main section h2 {
+    color: white;
+    font-family: var(--fuenteSecundaria);
+    font-size: 2em;
+    text-align: center;
+}
+
+main section h2 span {
+    color: var(--color-principal);
+}
+
+main section .underline {
+    position: relative;
+    width: 6em;
+    margin: 0 auto;
+    color: var(--color-principal);
+    font-weight: 700;
+    margin-bottom: 4em;
+    text-align: center;
+    /* esto hace que la flecha se vaya a la mitad */
+}
+
+main section .underline hr {
+    position: absolute;
+    width: 100%;
+    top: -1px;
+    /* -0.063em */
+    border-color: var(--color-principal);
+}
+
+/* Aqui empieza mi diseño  */
+
+main section #nuestroblog {
+    width: 100%;
+    height: auto;
+}
+
+.fondo {
+    background-color: var(--color-secundario);
+    width: 100%;
+}
+
+.enlace {
+    color: var(--color-principal);
+    margin: 1em 0 0 0;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+}
+
+main aside {
+    width: 100%;
+}
+
+main aside nav ul li a {
+    display: block;
+    text-decoration: none;
+    text-align: left;
+    color: white;
+    padding: 15px;
+    left: 10px;
+}
+
+main aside nav ul li a:hover {
+    background-color: var(--color-principal);
+    border-radius: 5px;
+}
+
+/* fin de la parte 1 del aside */
+
+/* Comienzo del la 2da parte del aside */
+
+main aside div h3 {
+    color: white;
+    text-align: left;
+    padding: 20px 0px 10px 0px;
+    font-weight: 700;
+}
+
+.lineaA {
+    width: 60px;
+    font-weight: 700;
+    border-color: var(--color-principal);
+    margin: 0;
+}
+
+main aside div p {
+    color: white;
+    text-align: left;
+    padding: 20px 0px 10px 0px;
+    margin: 0;
+    font-size: 0.80em;
+    line-height: 1.5em;
+}
+
+@media(min-width: 48em) {
+    main aside {
+        width: 25%;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 60px;
+    }
+    main .menu {
+        display: inline-block;
+        width: 65%;
+    }
+}
+
+/* fin del aside 2da parte */
+
+/* Contenido del menu */
+
+main div article:last-child {
+    margin-bottom: 100px;
+}
+
+main div article div .imagen {
+    width: 100%;
+    display: inline-block;
+}
+
+main div article div img {
+    padding: 25px;
+    display: inline-block;
+}
+
+main div article div.textoMenu {
+    display: inline-block;
+    padding: 0 25px;
+}
+
+main div article .textoMenu h4 {
+    font-weight: 700;
+    color: white;
+    font-size: 0.75em;
+    display: inline-block;
+}
+
+main div article .textoMenu span {
+    display: inline-block;
+    color: var(--color-principal);
+    font-size: 0.75em;
+    margin-left: 10px;
+}
+
+main div article .textoMenu p {
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 0.70em;
+}
+
+@media(min-width: 48em) {
+    main div .menu {
+        width: 100%;
+    }
+    main div article {
+        margin-bottom: 20px;
+    }
+    main div article .imagen {
+        display: inline-block;
+        width: 25%;
+    }
+    main div article div img {
+        width: 100%;
+        padding: 0;
+    }
+    main div article .textoMenu {
+        display: inline-block;
+        width: 69%;
+        padding: 0 20px;
+        vertical-align: top;
+    }
+    main div article .textoMenu h4 {
+        font-size: 1.1em;
+        display: inline-block;
+    }
+    main div article .textoMenu span {
+        font-size: 1.1em;
+    }
+    main div article .textoMenu p {
+        font-size: 0.90em;
+        padding: 0;
+        margin-top: 0.8em;
+    }
+}
+
+/* FOOTER */
+
+footer {
+    background-color: var(--color-secundario);
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    position: fixed;
+    margin-top: 20px;
+    width: 100%;
+    bottom: 0px;
+}
+
+footer div a {
+    color: white;
+}
+
+footer div a:hover {
+    text-decoration: none;
+}
+
+@media(min-width: 48em) {
+    footer {
+        text-align: left;
+    }
+}

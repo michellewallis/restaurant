@@ -1,0 +1,404 @@
+@import url("reset.css");
+/* font-family: 'Handlee', cursive;
+font-family: 'Montserrat', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:wght@400;700&display=swap');
+/* tipo de letra */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
+/* esto lo hemos traido de aqui: https://cdnjs.com/libraries/font-awesome */
+
+* {
+    box-sizing: border-box;
+    /* para que el borde y el padding crezcan para adentro */
+}
+
+/* variables :)  */
+
+:root {
+    --color-principal: #fa573a;
+    --color-secundario: #21242e;
+    --color-terciario: grey;
+    --fuentePrincipal: 'Montserrat', sans-serif;
+    --fuenteSecundaria: 'Handlee', cursive;
+    --anchoMaximo: 1100px;
+    /* no poner mediaqueries */
+}
+
+body {
+    font-family: var(--fuentePrincipal);
+    font-size: 1em;
+    /* el usuario define el tamaño */
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* siempre que sea responsive poner esto de la img*/
+
+.container {
+    max-width: var(--anchoMaximo);
+    margin: 0 auto;
+}
+
+.row {
+    /* aplicar a los elementos flotantes  */
+    display: flex;
+}
+
+.active {
+    color: var(--color-principal);
+}
+
+/* ESTO ES PARA EL MOVIL */
+
+/* HEADER */
+
+/* header de arriba */
+
+header .nav_top {
+    background-color: var(--color-secundario);
+    padding: 20px 10px;
+}
+
+header .nav_top a {
+    color: white;
+    font-size: 120%;
+    text-decoration: none;
+}
+
+header .nav_top a span {
+    display: none;
+    /* Esta oculto porque el tamaño era movil */
+}
+
+header .nav_top a i {
+    color: var(--color-principal);
+}
+
+header .nav_top .row {
+    justify-content: space-between;
+}
+
+/* header de abajo con menu de navegacion */
+
+header nav {
+    padding: 20px 10px;
+}
+
+/* estamos haciendo el boton tres lineas */
+
+header .hamburguesa {
+    width: 50px;
+    cursor: pointer;
+    /* esto es para que salga una mano */
+}
+
+header .hamburguesa div {
+    border-top: 2px solid var(--color-terciario);
+    margin: 10px;
+}
+
+header nav .row {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+header nav ul {
+    width: 100%;
+}
+
+header nav .logo {
+    max-width: 110px;
+}
+
+header nav ul li a {
+    display: block;
+    border-bottom: 1px solid var(--color-terciario);
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    color: var(--color-terciario);
+}
+
+header nav ul li a:hover {
+    color: var(--color-principal);
+}
+
+/* esto es para que se quede marcado el boton */
+
+header nav ul li .activo {
+    color: var(--color-principal)
+}
+
+@media(min-width: 48em) {
+    header .nav_top a span {
+        display: inline;
+    }
+}
+
+@media(min-width: 62.750em) {
+    header .hamburguesa {
+        display: none;
+    }
+    header nav ul {
+        width: auto;
+    }
+    header nav ul li {
+        display: inline-block;
+    }
+    header nav ul li a {
+        padding: 5px 20px;
+        border-bottom: 0px;
+        /* none */
+    }
+}
+
+/* FIN HEADER  */
+
+/* HERO foto principal  */
+
+.hero {
+    background-image: url("../images/fondo.jpg");
+    background-color: grey;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    padding: 15% 10px;
+}
+
+.hero h1 {
+    font-family: var(--fuenteSecundaria);
+    color: white;
+    font-size: 2.5em;
+}
+
+.hero h2 {
+    color: var(--color-principal);
+    font-size: 1.5em;
+    margin: 1em 0;
+}
+
+.hero p {
+    color: white;
+    font-size: 1.10em;
+}
+
+.boton {
+    display: inline-block;
+    background-color: var(--color-principal);
+    color: white;
+    padding: 1.15em;
+    text-decoration: none;
+    margin: 1em 0;
+    border: 1px solid var(--color-principal);
+}
+
+.boton:hover {
+    background-color: transparent;
+    color: var(--color-principal);
+}
+
+.boton:hover i {
+    transform: translateX(5px);
+}
+
+.hero ul li {
+    display: inline-block;
+    font-size: 2em;
+    margin-right: 1em;
+}
+
+.hero ul li a {
+    color: white;
+}
+
+/*  MAIN */
+
+/* SECCION 1 SERVICIOS */
+
+main section {
+    padding: 2.125em 0.825em;
+}
+
+/* titulos  */
+
+main section h2 {
+    color: black;
+    font-family: var(--fuenteSecundaria);
+    font-size: 2em;
+    text-align: center;
+}
+
+main section h2 span {
+    color: var(--color-principal);
+}
+
+main section .underline {
+    position: relative;
+    width: 6em;
+    margin: 0 auto;
+    color: var(--color-principal);
+    font-weight: 700;
+    margin-bottom: 2em;
+    text-align: center;
+    /* esto hace que la flecha se vaya a la mitad */
+}
+
+main section .underline hr {
+    position: absolute;
+    width: 100%;
+    top: -1px;
+    /* -0.063em */
+    border-color: var(--color-principal);
+}
+
+/* main section .row {
+    flex-wrap: wrap; /* sistemas flexibles, elegir las columnas / si todas las paginas fueran iguales esto estaria bien 
+} */
+
+main #ourservices .row {
+    flex-wrap: wrap;
+}
+
+main #ourservices article {
+    border-bottom: 1px solid var(--color-terciario);
+    padding: 1.825em;
+    /* 20px */
+}
+
+main #ourservices article div i {
+    color: var(--color-principal);
+    font-size: 2em;
+    border: 2px solid var(--color-principal);
+    padding: 0.8rem;
+}
+
+main #ourservices article .fa-truck {
+    transform: rotateY(180deg);
+    /* esto hace girar las figuras */
+}
+
+main #ourservices article h3 {
+    font-weight: 700;
+    margin: 1em 0;
+}
+
+.enlace {
+    color: var(--color-principal);
+    margin: 1em 0 0 0;
+    text-decoration: none;
+    display: inline-block;
+}
+
+@media(min-width: 48em) {
+    main #ourservices article {
+        width: 50%;
+        border-bottom: none;
+        border-left: 1px solid var(--color-terciario);
+        padding: 1.825em;
+        margin-bottom: 1em;
+    }
+    main #ourservices article:last-child {
+        width: 100%;
+    }
+}
+
+@media(min-width: 62.750em) {
+    main #ourservices article {
+        width: 33.333%;
+    }
+    main #ourservices article:last-child {
+        width: 33.333%;
+    }
+}
+
+/* FIN SECCIÓN 1 SERVICIOS */
+
+/*  SECCION 2 NOSOTROS - ABOUT US */
+
+main #aboutus {
+    padding-bottom: 110px;
+}
+
+main #aboutus .row {
+    flex-wrap: wrap;
+}
+
+main #aboutus h3 {
+    font-weight: 700;
+}
+
+main #aboutus h4 {
+    color: var(--color-principal);
+    margin: 1em 0;
+}
+
+main #aboutus .marco {
+    margin: 15px 0;
+    border: 3px solid var(--color-principal);
+    /* esto es para la animacion */
+    transform: rotateZ(10deg);
+    width: 90%;
+    transition: 1s;
+}
+
+main #aboutus .marco img {
+    /* hace parte de la animacion */
+    transform: rotateZ(-10deg);
+    transition: 1s;
+}
+
+main #aboutus .columna:hover .marco {
+    transform: rotateZ(0deg);
+}
+
+main #aboutus .columna:hover img {
+    transform: rotateZ(0deg);
+}
+
+@media(min-width: 48em) {
+    main #aboutus .marco {
+        margin: 0 15px;
+    }
+    main #aboutus .columna:first-child {
+        width: 40%;
+    }
+    main #aboutus .columna:last-child {
+        width: 60%;
+    }
+}
+
+/*  FIN SECCION 2 NOSOTROS - ABOUT US */
+
+/* FIN DEL MAIN  */
+
+/* FOOTER */
+
+footer {
+    background-color: var(--color-secundario);
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    position: fixed;
+    margin-top: 20px;
+    width: 100%;
+    bottom: 0px;
+}
+
+footer div a {
+    color: white;
+}
+
+footer div a:hover {
+    text-decoration: none;
+}
+
+@media(min-width: 48em) {
+    footer {
+        text-align: left;
+    }
+}
