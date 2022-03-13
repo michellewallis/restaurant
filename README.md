@@ -1,2 +1,2 @@
 # restaurante
-Maquetación de un restaurante de hamburguesas. 
+Maquetación de un restaurante de pizzas. 
